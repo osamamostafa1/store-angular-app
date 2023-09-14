@@ -1,0 +1,175 @@
+@import "../colors";
+@mixin biDirectional($start, $end) {
+  .sidebar {
+    position: fixed;
+    #{$start}: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background: $green;
+    padding: 6px 14px;
+    padding-#{$start}: 17px;
+    margin-top: 60px;
+    z-index: 99;
+    transition: all 0.5s ease;
+    box-shadow: $shadow;
+  }
+  .sidebar.open {
+    width: 270px;
+  }
+  .sidebar .logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-#{$end}: 2px;
+  }
+
+  .sidebar .logo-details #btn {
+    position: absolute;
+    top: 50%;
+    #{$end}: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: all 0.4s ease;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .sidebar.open .logo-details #btn {
+    text-align: #{$end};
+  }
+  .sidebar i {
+    color: $primary-bg;
+    height: 45px;
+    min-width: 45px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 45px;
+  }
+  .sidebar .nav-list {
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .sidebar li {
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+    border-radius: 5px;
+    border: 0px solid $green;
+    height: 45px;
+    overflow: hidden;
+    transition: width 0.4s ease;
+  }
+
+  .sidebar li a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .sidebar li a:hover {
+    background: $hover;
+  }
+  .sidebar li a .links_name {
+    color: $primary-bg;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease;
+  }
+  .sidebar.open li a .links_name {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar li a:hover .links_name,
+  .sidebar li a:hover i {
+    transition: all 0.5s ease;
+    color: $primary-bg;
+  }
+  .sidebar li i {
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .main-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-top: calc(60px + 1rem);
+    #{$start}: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  .sidebar.open ~ .main-section {
+    #{$start}: 270px;
+    width: calc(100% - 270px);
+  }
+  .main-section .text {
+    display: inline-block;
+    color: $green;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px;
+  }
+  .item a {
+    border-radius: 0px !important;
+    padding: 5px 15px;
+  }
+  .item li {
+    margin: 4px 8px;
+  }
+  .sidebar.close li {
+    height: 45px;
+    padding-bottom: 0px;
+  }
+  .sidebar .active {
+    background: $active;
+  }
+  .sidebar .show {
+    height: auto;
+    border: 0px;
+    background: $dark;
+    padding-bottom: 7px;
+  }
+  .link {
+    border: 0px;
+  }
+  .sidebar.open .active .link {
+    border-#{$start}: 5px solid $warning;
+    border-radius: 0;
+  }
+  .sidebar .active2 {
+    background-color: $active;
+    border-radius: 5px;
+  }
+  .sidebar span {
+    margin-#{$end}: auto;
+  }
+  .arrow-close {
+    margin: 0px !important;
+  }
+
+  .arrow-close i {
+    transform: rotate(0deg);
+    transition: all 1s;
+  }
+
+  @media (max-width: 1000px) {
+    .sidebar.open ~ .main-section {
+      #{$start}: 78px;
+      width: calc(100% - 78px);
+    }
+  }
+}
+
+@import "../direction";

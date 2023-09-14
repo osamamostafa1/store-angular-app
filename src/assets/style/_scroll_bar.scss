@@ -1,0 +1,33 @@
+@import "colors";
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: $green;
+}
+
+td
+/* Track */
+
+::-webkit-scrollbar-track,
+.page ::-webkit-scrollbar-track {
+  background: $secondary-bg;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: $dark;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: $dark;
+}

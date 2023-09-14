@@ -1,0 +1,127 @@
+@import "colors";
+.table-container {
+  background: $primary-bg;
+}
+.filter {
+  height: 0px;
+  overflow: hidden;
+  padding: 0px;
+  border: 0px !important;
+  transition: all 0.5s ease;
+
+  .input-group {
+    width: 200px;
+  }
+  .form-select {
+    display: block;
+    width: 210px;
+  }
+  .form-check .form-check-input {
+    float: right;
+    margin-left: 0.5em !important;
+    margin-top: 6px;
+  }
+}
+.page-link {
+  font-size: 12px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 33px;
+  padding: 0px;
+}
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border: 0;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+}
+.page-item:first-child .page-link:hover,
+.page-item:last-child .page-link:hover {
+  border: 0;
+  color: $span_color;
+}
+.page-item .page-link {
+  margin-left: 4px !important;
+}
+
+.page-item .active {
+  position: relative;
+  display: block;
+  color: $primary-bg;
+  text-decoration: none;
+  background-color: $green;
+  border: 0px solid $header-form;
+  border-radius: 50%;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.page-link {
+  color: $color;
+  border: 0px solid $header-form;
+  border-radius: 50%;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: $color;
+  background-color: $background;
+  border-color: $background;
+  border-radius: 50%;
+}
+
+.pagination-list {
+  border-top: 1px solid rgba(209, 213, 219, 1) !important;
+  padding: 0.5rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+}
+
+.filter.open-filter {
+  height: auto;
+  padding: 1.3rem !important;
+  border-top: 1px solid rgba(209, 213, 219, 1) !important;
+}
+
+.table thead tr {
+  background: $background;
+}
+.table > :not(:last-child) > :last-child > * {
+  border-bottom: 0px;
+}
+
+.table tr {
+  border-top: 1px solid rgba(209, 213, 219, 1) !important;
+}
+
+.table th,
+.table td {
+  padding: 1.3rem;
+}
+
+.table td .edit {
+  font-size: 25px;
+}
+
+.table .form-check {
+  margin: 0px;
+  padding: 0px;
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-width: 0px;
+  vertical-align: middle;
+}
+
+@media (max-width: 1000px) {
+  .table {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}

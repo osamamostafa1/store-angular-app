@@ -24,4 +24,62 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference][def] page.
+
+## library used
+
+- Angular Material
+- ngx-toastr
+- ngx-translate
+- bootstrap
+- boxicons
+- tailwindcss
+
+## the app conistant of
+
+app module
+
+-       app routing
+-       app component
+
+main module
+
+        components folder
+
+-           root component
+-           home component
+-           products component for Admin
+-           product details
+
+        layout folder
+
+-           navbar component
+-           sidebar component
+
+auth module
+
+        components folder
+
+-           login component
+
+services folder
+
+-       authentication service
+-       category service
+-       product service
+-       sidebar service
+
+assets folder
+
+-       fonts folder
+-       i18n folder
+-       image folder
+-       style folder
+
+-       components folder
+
+-           color style
+-           direction style
+-           form style
+-           global style
+-           scroll_bar style

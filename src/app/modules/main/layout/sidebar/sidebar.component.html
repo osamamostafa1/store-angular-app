@@ -1,0 +1,20 @@
+<div class="logo-details">
+    <i class='bx bx-menu' id="btn" *ngIf="_sideBarService.sideBarSubject.value == 'close'"
+        (click)="onToggleSideBar()"></i>
+    <i class='bx bx-menu-alt-right' id="btn" *ngIf="_sideBarService.sideBarSubject.value == 'open'"
+        (click)="onToggleSideBar()"></i>
+</div>
+<ul class="nav-list">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/home" class="link" (click)="closeMenu()">
+            <i class='bx bx-home'></i>
+            <span class="links_name">{{'home'|translate}}</span>
+        </a>
+    </li>
+    <li *ngIf="userRole == 'admin'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a routerLink="/products" class="link" (click)="closeMenu()">
+            <i class='bx bxs-color'></i>
+            <span class="links_name"> {{'products'|translate}}</span>
+        </a>
+    </li>
+</ul>

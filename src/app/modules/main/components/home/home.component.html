@@ -1,0 +1,64 @@
+<mat-progress-bar mode="query" *ngIf="loader"></mat-progress-bar>
+
+<div class="table-container">
+
+  <div class="flex flex-col md:flex-row justify-between pl-4 pr-4 pt-4">
+    <h2 class="mb-2">{{'products' |translate}}</h2>
+  </div>
+
+
+  <div class="filter open-filter flex flex-col md:flex-row items-start md:items-center ">
+    <select class="form-select ml-2  mb-2" (change)="selectCategory($event)" [(ngModel)]="selectedCategory">
+      <ng-container *ngFor="let category of categories">
+        <option [value]="category">{{category}}</option>
+      </ng-container>
+    </select>
+
+  </div>
+
+  <div class=" pagination-list flex justify-end items-center">
+    <!-- <app-pagination [paginationData]="paginationConfig" (change)="onPageChange($event)"></app-pagination> -->
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&laquo;</span>
+            السابق
+          </a>
+        </li>
+
+        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            التالى
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+</div>
+
+<div class="wrapper grid grid-cols-8 md:grid-cols-4   grid-rows-2  gap-3 mt-3">
+
+  <ng-container *ngFor="let product of products">
+    <div class="card col-span-8 md:col-span-2 lg:col-span-1 row-span-1 cursor-pointer"
+      [routerLink]="'/product-details/'+ product.id">
+      <div class="h-64 w-full overflow-hidden p-2">
+        <img class="w-full hover:scale-105 transition duration-500" [src]="product.image">
+      </div>
+      <p class="text-xl ">{{product.title | slice:0 :60}} ...</p>
+      <p class="text-2xl text-orange-600">{{product.price}}</p>
+    </div>
+
+  </ng-container>
+
+
+</div>

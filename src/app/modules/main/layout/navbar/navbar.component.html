@@ -1,0 +1,28 @@
+<header class=" navbar border-b flex items-center justify-between ">
+    <a class="flex items-center logo">
+        <span class="text-red-500">S</span>toreApp
+    </a>
+    <ul class="list-reset flex flex-row items-center p-0">
+        <li class="ml-4 pointer" (click)="changeLanguage()">
+            <img src="../../../assets/image/arabic.png" width="20" [alt]="language" *ngIf="language == 'arabic'">
+            <img src="../../../assets/image/english.png" width="20" [alt]="language" *ngIf="language == 'english'">
+        </li>
+
+        <li class="ml-4 bell">
+            <div class="py-3 pointer ">
+                {{_global.currentUser?.userName}}
+            </div>
+        </li>
+        <li class="ml-4">
+            <div class="relative w-10 h-10 pointer" ngbDropdown>
+                <img class="rounded-full border border-gray-100 shadow-sm h-full" [matMenuTriggerFor]="menu"
+                    [src]="image" alt="user image" />
+
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logout()">{{'logout'|translate}}</button>
+                </mat-menu>
+            </div>
+        </li>
+    </ul>
+
+</header>

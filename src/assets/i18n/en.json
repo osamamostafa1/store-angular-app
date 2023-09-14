@@ -1,0 +1,15 @@
+{
+  "home": "Home",
+  "products": "Products",
+  "product": "Product",
+  "add_product": "Add Product",
+  "create": "create",
+  "edit": "edit",
+  "Image": "Image",
+  "Tilte": "Tilte",
+  "price": "price",
+  "category": "category",
+  "description": "description",
+  "logout": "Logout",
+  "close": "Close"
+}

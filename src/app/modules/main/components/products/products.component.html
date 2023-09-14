@@ -1,0 +1,81 @@
+<mat-progress-bar mode="query" *ngIf="loader"></mat-progress-bar>
+<div class="table-container">
+
+  <div class="flex flex-col md:flex-row justify-between pl-4 pr-4 pt-4">
+    <h2 class="mb-2">{{'products'|translate}}</h2>
+    <div>
+      <button class="btn btn-primary mb-2" (click)="addProduct()">{{'add_product'|translate}}</button>
+    </div>
+  </div>
+
+  <div class="flex justify-end pl-4 pr-4 pb-4">
+    <button class="btn btn-default ml-2 mr-2"><i class='bx bx-revision'></i></button>
+    <button class="btn btn-primary" (click)="openFilter()"><i class='bx bx-filter-alt'></i></button>
+  </div>
+
+  <div class="filter open-filter flex flex-col md:flex-row items-start md:items-center " [class.open-filter]="isFilter">
+    <div class="form-group ml-2 mb-2">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+
+  </div>
+
+  <div class=" pagination-list flex justify-end items-center">
+    <!-- <app-pagination [paginationData]="paginationConfig" (change)="onPageChange($event)"></app-pagination> -->
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&laquo;</span>
+            السابق
+          </a>
+        </li>
+
+        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            التالى
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 100px;"> {{'Image' |translate}}</th>
+        <th scope="col"> {{'Tilte'|translate}}</th>
+        <th scope="col"> {{'price'|translate}}</th>
+        <th scope="col"> {{'category'|translate}}</th>
+        <th scope="col"> {{'description'|translate}}</th>
+        <th scope="col" style="width: 25px;"></th>
+        <th scope="col" style="width: 25px;"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let product of products">
+        <tr>
+          <td class="pointer" [routerLink]="'/product-details/'+product.id">
+            <img [src]="product.image" alt="">
+          </td>
+          <td class="pointer" [routerLink]="'/product-details/'+product.id">{{product.title}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.description}}</td>
+          <td>
+            <i class='bx bx-edit-alt edit text-blue-700 pointer' (click)="editProduct(product)"></i>
+          </td>
+          <td>
+            <i class='bx bx-trash-alt edit text-red-700 pointer' (click)="deleteCategory(product.id)"></i>
+          </td>
+        </tr>
+      </ng-container>
+
+    </tbody>
+  </table>
+</div>

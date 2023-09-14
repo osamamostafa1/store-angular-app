@@ -1,0 +1,30 @@
+<mat-progress-bar mode="query" *ngIf="loader"></mat-progress-bar>
+<div class="details-container">
+
+  <div class="details-header flex flex-col md:flex-row justify-between p-4">
+    <h2 class="mb-2"> {{product.title}}</h2>
+  </div>
+  <div class=" grid grid-cols-8 gap-3 p-4">
+    <div class="col-span-4 md:col-span-2 row-span-2">
+      <p>{{'price'|translate}}</p>
+      <span> {{product.price}}</span>
+    </div>
+
+    <div class="col-span-4 md:col-span-2 row-span-2">
+      <p>{{'category'|translate}}</p>
+      <span> {{product.category}}</span>
+    </div>
+    <div class="col-span-8"></div>
+    <div class="col-span-8 md:col-span-4 row-span-2">
+      <p>{{'description'|translate}}</p>
+      <span> {{product.description}}</span>
+    </div>
+    <div class="col-span-8"></div>
+    <div class="col-span-8 md:col-span-2 row-span-2">
+      <p class="mb-4">{{'Image' |translate}}</p>
+      <img [src]="product.image" alt="">
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="auth flex items-center justify-center w-full ">
+  <div class="mt-7">
+    <div class="text-center mb-4">
+      <a class="navbar-brand m-0 logo">
+        <span class="text-red-500">S</span>toreApp
+      </a>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class=" m-2 login">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" placeholder="name@example.com" formControlName="username">
+          <ng-container *ngIf="(formControl['username']?.touched ) && formControl['username'].errors?.['required']">
+            <p class="text-danger text-xs"> اسم المستخدم الالكترونى مطلوب</p>
+          </ng-container>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="*******" formControlName="password">
+          <p class="text-danger text-xs"
+            *ngIf="(formControl['password']?.touched ) && formControl['password'].errors?.['required']">
+            كلمة المرور مطلوبة
+          </p>
+        </div>
+        <div class="flex flex-col justify-center mt-2  text-center">
+          <button class="btn btn-primary text-xl" (click)="login()" [disabled]="loginForm.invalid">login</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+@import "../colors";
+.dropdown-toggle::after {
+  display: none;
+}
+.dropup .dropdown-toggle::after {
+  display: none;
+}
+
+.menue-open {
+  margin-top: 10px;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: $primary-bg;
+  height: 60px;
+  z-index: 15;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: $shadow;
+}

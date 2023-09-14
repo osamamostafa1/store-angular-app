@@ -1,0 +1,51 @@
+<div class="modal-wrapper">
+  <div class="modal-header ">
+    <p class="w-full text-center">{{actionName | translate}} {{'product'|translate}}</p>
+
+  </div>
+  <div class="modal-content" [formGroup]="reactiveForm">
+    <div class="modal-body row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label"> {{'Tilte'|translate}}</label>
+          <input type="text" class="form-control" formControlName="title">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label"> {{'price'|translate}}</label>
+          <input type="text" class="form-control" formControlName="price">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3 ">
+          <label class="form-label">{{'category'|translate}}</label>
+          <ng-select class="select" [multiple]="false" formControlName="category">
+            <ng-option *ngFor="let category of categories" [value]="category">{{category}}</ng-option>
+          </ng-select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">{{'Image'|translate}}</label>
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="mb-3">
+          <label class="form-label">{{'description'|translate}}</label>
+          <textarea class="form-control" formControlName="description"></textarea>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary mb-2" type="submit" (click)="onSubmit()">{{actionName |translate}}</button>
+    <button class="btn btn-default mb-2 mr-2 ml-2" type="submit" (click)="closeModal()">{{'close'|translate}}</button>
+  </div>
+
+</div>

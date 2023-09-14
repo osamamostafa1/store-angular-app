@@ -1,0 +1,173 @@
+@import "colors";
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400;
+  line-height: 1.75;
+  color: $color;
+  background-color: $primary-bg !important;
+  background-clip: padding-box;
+  border: 1px solid $content-form !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  border-radius: 0.25rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: $shadow;
+}
+
+.form-control:focus {
+  border: 0px !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(89, 112, 112, 0.8);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $dark;
+  border-color: $dark;
+  box-shadow: 0 10px 20px -10px $dark;
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  background-color: $dark;
+  border-color: $dark;
+}
+.btn-default {
+  box-shadow: 0 10px 20px -10px $space-gray2;
+}
+.btn-default:active,
+.btn-default:focus,
+.btn-default:hover {
+  color: #fff !important;
+  background-color: $active !important;
+  border-color: $active !important;
+  outline: none !important;
+}
+.image {
+  box-shadow: 0 10px 20px -10px $pop-color;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #fff;
+  background-color: $hover !important;
+  border-color: $hover !important;
+  outline: none !important;
+}
+
+.btn-primary:focus,
+.form-control:focus .btn-default:focus,
+.btn-default:active {
+  box-shadow: 0 0 0 0.25rem $shadow !important;
+}
+.form-select {
+  line-height: 1.7;
+  box-shadow: 0px 0px 4px rgb(44 51 51 / 25%);
+}
+.form-select:focus,
+.form-check-input:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem $shadow;
+}
+
+.modal-header {
+  border-bottom: 0px solid $header-form;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.form-floating > label {
+  left: auto;
+}
+
+.file {
+  margin-top: -8px;
+}
+
+.ng-select .ng-select-container {
+  color: $color;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid $lite-ccc;
+  min-height: 42px;
+}
+
+.ng-select {
+  box-shadow: $shadow;
+}
+.ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+  box-shadow: 0 0 0 0.1rem $shadow;
+  border-color: transparent;
+}
+
+.ng-select span {
+  color: $color;
+}
+
+.mat-mdc-dialog-container {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+.cdk-overlay-pane {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.modal-content .form-check {
+  box-shadow: $shadow;
+  border: 1px solid $content-form !important;
+  border-radius: 0.25rem;
+  height: calc(100% - 15px);
+  display: inline-flex;
+}
+.form-check .form-check-input {
+  float: none;
+  margin-left: 0;
+}
+
+.form-floating > label {
+  top: -8px;
+}
+
+.modal-content {
+  padding: 15px;
+  margin: 2%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  box-shadow: $shadow;
+}
+
+.modal-header {
+  width: 96%;
+  margin: 2%;
+}
+
+.modal-footer {
+  justify-content: inherit;
+  width: 96%;
+  margin: 2%;
+}
